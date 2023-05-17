@@ -18,21 +18,29 @@ class _ChooseCategoryState extends State<ChooseCategory> {
 
     _brandIcons = [
       BrandIconCard(
-        icon: Icons.bar_chart,
+        image: "assets/images/addidas_logo_pngwing.png",
         onClick: () {},
       ),
       const SizedBox(width: 16),
-      BrandIconCard(icon: Icons.monetization_on, onClick: () {}),
+      BrandIconCard(
+        image: "assets/images/jordans_logo_pngwing.png",
+        onClick: () {},
+      ),
       const SizedBox(width: 16),
-      BrandIconCard(icon: Icons.food_bank, onClick: () {}),
+      BrandIconCard(
+        image: "assets/images/nike_logo_pngwing.png",
+        onClick: () {},
+      ),
       const SizedBox(width: 16),
-      BrandIconCard(icon: Icons.handshake, onClick: () {}),
+      BrandIconCard(
+        image: "assets/images/addidas_logo_pngwing.png",
+        onClick: () {},
+      ),
       const SizedBox(width: 16),
-      BrandIconCard(icon: Icons.handshake, onClick: () {}),
-      const SizedBox(width: 16),
-      BrandIconCard(icon: Icons.handshake, onClick: () {}),
-      const SizedBox(width: 16),
-      BrandIconCard(icon: Icons.handshake, onClick: () {}),
+      BrandIconCard(
+        image: "assets/images/puma_logo_pngwing.png",
+        onClick: () {},
+      ),
     ];
   }
 

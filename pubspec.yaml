@@ -80,6 +80,10 @@ flutter:
     - assets/images/shoe12.png
     - assets/images/shoe13.png
     - assets/images/shoe14.png
+    - assets/images/addidas_logo_pngwing.png
+    - assets/images/jordans_logo_pngwing.png
+    - assets/images/nike_logo_pngwing.png
+    - assets/images/puma_logo_pngwing.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
