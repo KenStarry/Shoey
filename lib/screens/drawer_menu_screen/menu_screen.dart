@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoey/screens/drawer_menu_screen/components/menu_options.dart';
 import 'package:shoey/screens/drawer_menu_screen/components/user_profile.dart';
 import 'package:shoey/utils/colors.dart';
 
@@ -12,12 +13,13 @@ class MenuScreen extends StatelessWidget {
       height: double.infinity,
       padding: const EdgeInsets.all(16),
       color: accentColor,
-      child: SafeArea(
+      child: const SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            UserProfile()
+            UserProfile(),
+            MenuOptions()
           ],
         ),
       ),
