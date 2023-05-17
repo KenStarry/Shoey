@@ -5,16 +5,20 @@ class ShoeCard extends StatelessWidget {
   final String image;
   final int price;
   final String shoeName;
+  bool isFavourite;
 
   //  pass afunction with no return type
   final Function()? onClick;
+  final Function() onFavouriteClicked;
 
-  const ShoeCard(
+  ShoeCard(
       {super.key,
       required this.image,
       required this.price,
       required this.shoeName,
-      required this.onClick});
+      required this.isFavourite,
+      required this.onClick,
+      required this.onFavouriteClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +34,31 @@ class ShoeCard extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  child: Align(
-                    alignment: AlignmentDirectional.center,
-                    child: Image.asset(image, width: double.infinity, height: double.infinity,),
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional.center,
+                        child: Image.asset(
+                          image,
+                          width: double.infinity,
+                          height: double.infinity,
+                        ),
+                      ),
+                      Align(
+                        alignment: AlignmentDirectional.topEnd,
+                        child: IconButton(
+                            onPressed: () {
+                              //  toogle the provider state of the button
+                              onFavouriteClicked();
+                            },
+                            icon: Icon(
+                              isFavourite
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color: Colors.deepOrange.shade400,
+                            )),
+                      )
+                    ],
                   ),
                 )),
 

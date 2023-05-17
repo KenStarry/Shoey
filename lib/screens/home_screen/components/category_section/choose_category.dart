@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shoey/screens/home_screen/components/category_section/brand_icon_card.dart';
 import 'package:shoey/screens/home_screen/components/category_section/shoe_card.dart';
+import 'package:shoey/screens/home_screen/provider/shoe_card_provider.dart';
 
 class ChooseCategory extends StatefulWidget {
   @override
@@ -9,7 +11,6 @@ class ChooseCategory extends StatefulWidget {
 
 class _ChooseCategoryState extends State<ChooseCategory> {
   late final List<Widget> _brandIcons;
-  late final List<Widget> _shoeCards;
 
   @override
   void initState() {
@@ -33,68 +34,118 @@ class _ChooseCategoryState extends State<ChooseCategory> {
       const SizedBox(width: 16),
       BrandIconCard(icon: Icons.handshake, onClick: () {}),
     ];
-
-    _shoeCards = [
-      ShoeCard(
-          image: "assets/images/shoe5.png",
-          price: 3500,
-          shoeName: "Nike Airmax",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe11.png",
-          price: 1500,
-          shoeName: "Nike Airforce",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe7.png",
-          price: 700,
-          shoeName: "Jordans",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe8.png",
-          price: 4999,
-          shoeName: "Addidas Pro",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe9.png",
-          price: 5000,
-          shoeName: "Canvas",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe10.png",
-          price: 1300,
-          shoeName: "Nike Pro Air",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe11.png",
-          price: 8900,
-          shoeName: "Nike Spring",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe12.png",
-          price: 900,
-          shoeName: "Nike Airforce",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe13.png",
-          price: 800,
-          shoeName: "Nike Premium",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe14.png",
-          price: 7000,
-          shoeName: "Addidas 500",
-          onClick: () {}),
-      ShoeCard(
-          image: "assets/images/shoe7.png",
-          price: 8500,
-          shoeName: "Nikey",
-          onClick: () {}),
-    ];
   }
 
   @override
   Widget build(BuildContext context) {
+    var shoeCardProvider = Provider.of<ShoeCardProvider>(context);
+
+    bool providerContainsImage(String image) => Provider.of<ShoeCardProvider>(context)
+        .favouriteCardsImages
+        .contains(image);
+
+    var shoeCards = [
+      ShoeCard(
+        image: "assets/images/shoe5.png",
+        price: 3500,
+        shoeName: "Nike Airmax",
+        isFavourite: providerContainsImage("assets/images/shoe5.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe5.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe6.png",
+        price: 1500,
+        shoeName: "Nike Airforce",
+        isFavourite: providerContainsImage("assets/images/shoe6.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe6.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe7.png",
+        price: 700,
+        shoeName: "Jordans",
+        isFavourite: providerContainsImage("assets/images/shoe7.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe7.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe8.png",
+        price: 4999,
+        shoeName: "Addidas Pro",
+        isFavourite: providerContainsImage("assets/images/shoe8.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe8.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe9.png",
+        price: 5000,
+        shoeName: "Canvas",
+        isFavourite: providerContainsImage("assets/images/shoe9.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe9.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe10.png",
+        price: 1300,
+        shoeName: "Nike Pro Air",
+        isFavourite: providerContainsImage("assets/images/shoe10.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe10.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe11.png",
+        price: 8900,
+        shoeName: "Nike Spring",
+        isFavourite: providerContainsImage("assets/images/shoe11.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe11.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe12.png",
+        price: 900,
+        shoeName: "Nike Airforce",
+        isFavourite: providerContainsImage("assets/images/shoe12.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe12.png");
+        },
+      ),
+      ShoeCard(
+        image: "assets/images/shoe13.png",
+        price: 800,
+        shoeName: "Nike Premium",
+        isFavourite: providerContainsImage("assets/images/shoe13.png"),
+        onClick: () {},
+        onFavouriteClicked: () {
+          Provider.of<ShoeCardProvider>(context, listen: false).toggleFavourite(
+              !shoeCardProvider.isFavouriteClicked, "assets/images/shoe13.png");
+        },
+      ),
+    ];
+
     return Column(
       children: [
         //  header
@@ -112,13 +163,18 @@ class _ChooseCategoryState extends State<ChooseCategory> {
             ),
             GestureDetector(
               onTap: () {},
-              child: const Text(
-                "See more",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54,
-                    fontFamily: "Poppins",
-                    fontSize: 14),
+              child: const Row(
+                children: [
+                  Text(
+                    "See more",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black54,
+                        fontFamily: "Poppins",
+                        fontSize: 14),
+                  ),
+                  Icon(Icons.arrow_right, color: Colors.black54,)
+                ],
               ),
             )
           ],
@@ -143,8 +199,8 @@ class _ChooseCategoryState extends State<ChooseCategory> {
         GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2),
-          itemBuilder: (context, position) => _shoeCards[position],
-          itemCount: _shoeCards.length,
+          itemBuilder: (context, position) => shoeCards[position],
+          itemCount: shoeCards.length,
           shrinkWrap: true,
           primary: false,
         )
