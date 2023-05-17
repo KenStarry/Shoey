@@ -18,7 +18,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
 
     _brandIcons = [
       BrandIconCard(
-        image: "assets/images/addidas_logo_pngwing.png",
+        image: "assets/images/puma_logo_pngwing.png",
         onClick: () {},
       ),
       const SizedBox(width: 16),

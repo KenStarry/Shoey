@@ -3,6 +3,7 @@ import 'package:shoey/utils/colors.dart';
 
 class BrandIconCard extends StatelessWidget {
   final String image;
+
   //  pass afunction with no return type
   final Function()? onClick;
 
@@ -12,10 +13,12 @@ class BrandIconCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: 65,
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
-          color: accentColorLight
-        ),
-        child: Image.asset(image));
+            borderRadius: BorderRadius.circular(18), color: accentColorLight),
+        child: Image.asset(
+          image,
+          fit: BoxFit.cover,
+        ));
   }
 }
