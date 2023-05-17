@@ -8,7 +8,7 @@ import 'package:shoey/screens/cart_screen.dart';
 import 'package:shoey/screens/core/components.dart';
 import 'package:shoey/screens/favorites_screen.dart';
 import 'package:shoey/screens/home_screen/home_screen.dart';
-import 'package:shoey/screens/menu_screen.dart';
+import 'package:shoey/screens/drawer_menu_screen/menu_screen.dart';
 import 'package:shoey/screens/my_icon.dart';
 import 'package:shoey/screens/onboarding/onboarding_screen.dart';
 import 'package:shoey/screens/settings_screen.dart';
@@ -149,15 +149,3 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
-
-
-// Container(
-// width: 45,
-// height: 45,
-// margin: const EdgeInsets.all(8),
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(100),
-// image: const DecorationImage(
-// image: AssetImage("assets/images/lady.jpg"),
-// fit: BoxFit.cover)),
-// ),
