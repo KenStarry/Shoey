@@ -107,7 +107,7 @@ class _MainScreenState extends State<MainScreen> {
                 )
               ],
             ),
-            toolbarHeight: 120,
+            toolbarHeight: 100,
             centerTitle: false,
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,

@@ -14,7 +14,7 @@ class BrandIconCard extends StatelessWidget {
         width: 55,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          color: accentColor
+          color: accentColorLight
         ),
         child: Icon(icon, color: Colors.black54));
   }
