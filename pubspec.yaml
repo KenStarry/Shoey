@@ -56,6 +56,19 @@ dev_dependencies:
   # native splash screen
   flutter_native_splash: ^2.3.0
 
+flutter_native_splash:
+  # splash screen background color
+  color: "#ffffff"
+  color_dark: "212121"
+  image: assets/images/shoey_light_mode.png
+  image_dark: assets/images/shoey_dark_mode.png
+  android12:
+    color: "#fdf2e1"
+    color_dark: "212121"
+    image: assets/images/shoey_light_mode.png
+    image_dark: assets/images/shoey_dark_mode.png
+    android: false
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -89,6 +102,8 @@ flutter:
     - assets/images/jordans_logo_pngwing.png
     - assets/images/nike_logo_pngwing.png
     - assets/images/puma_logo_pngwing.png
+    - assets/images/shoey_light_mode.png
+    - assets/images/shoey_dark_mode.png
     - assets/lottie/empty_screen.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
