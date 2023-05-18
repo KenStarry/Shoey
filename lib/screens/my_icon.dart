@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:shoey/utils/colors.dart';
 
 class DrawerIcon extends StatelessWidget {
   const DrawerIcon({Key? key}) : super(key: key);
@@ -13,7 +12,6 @@ class DrawerIcon extends StatelessWidget {
         },
         icon: const Icon(
           Icons.menu,
-          color: Colors.black54,
         ));
   }
 }

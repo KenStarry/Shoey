@@ -161,27 +161,19 @@ class _ChooseCategoryState extends State<ChooseCategory> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               "Choose Category",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                  fontFamily: "Poppins",
-                  fontSize: 20),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             GestureDetector(
               onTap: () {},
-              child: const Row(
+              child: Row(
                 children: [
                   Text(
                     "See more",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black54,
-                        fontFamily: "Poppins",
-                        fontSize: 14),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
-                  Icon(Icons.arrow_right, color: Colors.black54,)
+                  const Icon(Icons.arrow_right)
                 ],
               ),
             )

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoey/utils/colors.dart';
+import '../../../core/utils/colors.dart';
 
 class ShoeCard extends StatelessWidget {
   final String image;
@@ -25,7 +25,7 @@ class ShoeCard extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18), color: accentColorLight),
+            borderRadius: BorderRadius.circular(18), color: Theme.of(context).primaryColorDark),
         child: Column(
           children: [
             //  image
@@ -74,19 +74,11 @@ class ShoeCard extends StatelessWidget {
                     children: [
                       Text(
                         shoeName,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            fontFamily: "Poppins",
-                            color: Colors.black87),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       Text(
                         "Ksh. $price",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: "Poppins",
-                            color: Colors.black54),
+                        style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ],
                   ),

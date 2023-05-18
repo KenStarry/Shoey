@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/colors.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -12,7 +11,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Text("Settings Screen"),
     );
   }

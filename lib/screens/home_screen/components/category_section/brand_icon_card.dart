@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoey/utils/colors.dart';
+import '../../../core/utils/colors.dart';
 
 class BrandIconCard extends StatelessWidget {
   final String image;
@@ -15,9 +15,10 @@ class BrandIconCard extends StatelessWidget {
         width: 65,
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18), color: accentColorLight),
+            borderRadius: BorderRadius.circular(18), color: Theme.of(context).primaryColorDark),
         child: Image.asset(
           image,
+          color: Theme.of(context).iconTheme.color,
           fit: BoxFit.cover,
         ));
   }

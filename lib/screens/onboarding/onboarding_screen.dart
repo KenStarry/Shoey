@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shoey/screens/onboarding/components/get_started.dart';
 import 'package:shoey/screens/onboarding/components/new_life_text.dart';
-import 'package:shoey/utils/colors.dart';
+
+import '../core/utils/colors.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   @override

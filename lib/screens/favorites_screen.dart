@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/colors.dart';
 
 class FavoritesScreen extends StatefulWidget {
   @override
@@ -12,7 +11,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Text("Favorites Screen"),
     );
   }

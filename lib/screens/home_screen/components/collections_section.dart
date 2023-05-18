@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoey/screens/home_screen/components/collection_card.dart';
-import 'package:shoey/utils/colors.dart';
+
+import '../../core/utils/colors.dart';
 
 class CollectionsSection extends StatelessWidget {
   @override

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shoey/screens/drawer_menu_screen/components/menu_options.dart';
+import 'package:shoey/screens/drawer_menu_screen/components/menu_darkmode.dart';
 import 'package:shoey/screens/drawer_menu_screen/components/user_profile.dart';
-import 'package:shoey/utils/colors.dart';
+
+import '../core/utils/colors.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -19,7 +21,8 @@ class MenuScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UserProfile(),
-            MenuOptions()
+            MenuOptions(),
+            MenuDarkMode()
           ],
         ),
       ),

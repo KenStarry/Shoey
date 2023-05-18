@@ -12,7 +12,7 @@ class MenuOptionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: Colors.black54),
+        Icon(icon),
         const SizedBox(width: 16),
         Text(optionName,
           style: const TextStyle(

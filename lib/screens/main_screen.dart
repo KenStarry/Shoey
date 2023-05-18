@@ -12,7 +12,8 @@ import 'package:shoey/screens/drawer_menu_screen/menu_screen.dart';
 import 'package:shoey/screens/my_icon.dart';
 import 'package:shoey/screens/onboarding/onboarding_screen.dart';
 import 'package:shoey/screens/settings_screen.dart';
-import 'package:shoey/utils/colors.dart';
+
+import 'core/utils/colors.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -32,22 +33,18 @@ class _MainScreenState extends State<MainScreen> {
     _icons = const [
       Icon(
         Icons.home,
-        color: Colors.black54,
         key: Key("home_screen_icon"),
       ),
       Icon(
         Icons.shopping_cart,
-        color: Colors.black54,
         key: Key("cart_screen_icon"),
       ),
       Icon(
         Icons.favorite_border,
-        color: Colors.black54,
         key: Key("favorite_screen_icon"),
       ),
       Icon(
         Icons.settings,
-        color: Colors.black54,
         key: Key("settings_screen_icon"),
       ),
     ];
@@ -62,46 +59,27 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return ZoomDrawer(
       mainScreen: AnnotatedRegion(
-          value: const SystemUiOverlayStyle(
-              systemNavigationBarColor: accentColor,
+          value: SystemUiOverlayStyle(
+              systemNavigationBarColor: Theme.of(context).primaryColorDark,
               systemNavigationBarIconBrightness: Brightness.dark,
-              statusBarColor: Colors.white,
+              statusBarColor: Theme.of(context).scaffoldBackgroundColor,
               statusBarIconBrightness: Brightness.dark),
           child: Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             appBar: AppBar(
-              title: const Column(
-                children: [
-                  Text.rich(TextSpan(
-                      style: TextStyle(
-                          fontFamily: "Poppins",
-                          fontSize: 16,
-                          color: Colors.black87),
-                      children: [
-                        TextSpan(
-                            text: "Hi, ",
-                            style: TextStyle(fontWeight: FontWeight.normal)),
-                        TextSpan(
-                            text: "Zoey",
-                            style: TextStyle(fontWeight: FontWeight.bold))
-                      ])),
-                  Text(
-                    "UI designer",
-                    style: TextStyle(
-                        fontFamily: "Poppins",
-                        fontWeight: FontWeight.normal,
-                        fontSize: 12,
-                        color: Colors.black54),
-                  ),
-                ],
-              ),
+              iconTheme: Theme.of(context).iconTheme,
+              title: Text.rich(TextSpan(children: [
+                TextSpan(
+                    text: "Hi, ", style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(
+                    text: "Zoey", style: Theme.of(context).textTheme.bodyLarge)
+              ])),
               leading: const DrawerIcon(),
               toolbarHeight: 100,
-              centerTitle: false,
-              backgroundColor: Colors.white,
+              centerTitle: true,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               // hide the leading icon
               elevation: 0,
               titleSpacing: 0,
@@ -115,7 +93,6 @@ class _MainScreenState extends State<MainScreen> {
                   },
                   icon: const Icon(
                     Icons.search,
-                    color: Colors.black54,
                   ),
                 )
               ],
@@ -130,9 +107,9 @@ class _MainScreenState extends State<MainScreen> {
             bottomNavigationBar: CurvedNavigationBar(
               key: const Key("main_curved_navigation"),
               items: _icons,
-              buttonBackgroundColor: accentColor,
-              backgroundColor: Colors.white,
-              color: accentColor,
+              buttonBackgroundColor: Theme.of(context).primaryColorDark,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              color: Theme.of(context).primaryColorDark,
               animationDuration: const Duration(milliseconds: 300),
               onTap: (index) {
                 //  navigate to page at index
@@ -141,11 +118,14 @@ class _MainScreenState extends State<MainScreen> {
                 });
               },
             ),
-          )
-      ),
+          )),
       menuScreen: MenuScreen(),
       menuBackgroundColor: accentColor,
       showShadow: true,
+      mainScreenTapClose: true,
+      openCurve: const Interval(0.0, 1.0, curve: Curves.ease),
+      closeCurve: const Interval(0.0, 1.0, curve: Curves.ease),
+      duration: const Duration(milliseconds: 300),
     );
   }
 }

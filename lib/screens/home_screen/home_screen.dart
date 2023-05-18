@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoey/screens/home_screen/components/category_section/choose_category.dart';
 import 'package:shoey/screens/home_screen/components/collections_section.dart';
-import 'package:shoey/utils/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -20,13 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //  heading
-            const Text(
+            Text(
               "New Collections",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                  fontFamily: "Poppins",
-                  fontSize: 20),
+              style: Theme.of(context).textTheme.titleSmall,
             ),
 
             //  collections
