@@ -15,12 +15,7 @@ class MenuOptionItem extends StatelessWidget {
         Icon(icon),
         const SizedBox(width: 16),
         Text(optionName,
-          style: const TextStyle(
-              fontFamily: "Poppins",
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-              color: Colors.black87
-          ),)
+          style: Theme.of(context).textTheme.bodyMedium,)
       ],
     );
   }

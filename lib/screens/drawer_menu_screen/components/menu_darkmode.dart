@@ -13,7 +13,7 @@ class MenuDarkMode extends StatelessWidget {
           //  trial period remaining
           Row(
             children: [
-              Icon(Icons.light_mode, color: Colors.black54,),
+              Icon(Icons.light_mode),
               SizedBox(width: 16),
               Text("Light Mode")
             ],

@@ -69,12 +69,12 @@ class MyTheme {
             fontSize: 26),
         titleMedium: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white70,
+            color: Colors.white,
             fontFamily: "Poppins",
             fontSize: 22),
         titleSmall: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white70,
+            color: Colors.white,
             fontFamily: "Poppins",
             fontSize: 18),
         bodyLarge: TextStyle(

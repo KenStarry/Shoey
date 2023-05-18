@@ -11,7 +11,7 @@ class MenuOptions extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white70,
+        color: Theme.of(context).scaffoldBackgroundColor,
       ),
       child: const  Column(
         children: [

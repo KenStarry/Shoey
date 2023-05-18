@@ -11,7 +11,7 @@ void main() => runApp(MultiProvider(
       child: MaterialApp(
         home: MainScreen(),
         debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.dark,
+        themeMode: ThemeMode.system,
         theme: MyTheme.lightTheme,
         darkTheme: MyTheme.darkTheme,
       ),

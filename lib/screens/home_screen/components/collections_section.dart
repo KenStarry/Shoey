@@ -55,10 +55,9 @@ class CollectionsSection extends StatelessWidget {
                           height: 50,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              color: accentColor),
+                              color: Theme.of(context).primaryColorDark),
                           child: const Icon(
                             Icons.arrow_right_alt,
-                            color: Colors.black87,
                           ),
                         ),
                       )
