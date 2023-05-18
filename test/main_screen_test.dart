@@ -1,11 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shoey/screens/cart_screen.dart';
-import 'package:shoey/screens/favorites_screen.dart';
+import 'package:shoey/screens/cart_screen/cart_screen.dart';
+import 'package:shoey/screens/favorites_screen/favorites_screen.dart';
 import 'package:shoey/screens/home_screen/home_screen.dart';
 import 'package:shoey/screens/main_screen.dart';
-import 'package:shoey/screens/settings_screen.dart';
+import 'package:shoey/screens/settings_screen/settings_screen.dart';
 
 void main() {
   //  testing the main screen

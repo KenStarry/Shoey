@@ -4,14 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
-import 'package:shoey/screens/cart_screen.dart';
+import 'package:shoey/screens/cart_screen/cart_screen.dart';
 import 'package:shoey/screens/core/components.dart';
-import 'package:shoey/screens/favorites_screen.dart';
+import 'package:shoey/screens/favorites_screen/favorites_screen.dart';
 import 'package:shoey/screens/home_screen/home_screen.dart';
 import 'package:shoey/screens/drawer_menu_screen/menu_screen.dart';
-import 'package:shoey/screens/my_icon.dart';
+import 'package:shoey/screens/home_screen/components/drawer_icon.dart';
 import 'package:shoey/screens/onboarding/onboarding_screen.dart';
-import 'package:shoey/screens/settings_screen.dart';
+import 'package:shoey/screens/settings_screen/settings_screen.dart';
 
 import 'core/utils/colors.dart';
 
@@ -77,7 +77,6 @@ class _MainScreenState extends State<MainScreen> {
                     text: "Zoey", style: Theme.of(context).textTheme.bodyLarge)
               ])),
               leading: const DrawerIcon(),
-              toolbarHeight: 100,
               centerTitle: true,
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               // hide the leading icon
@@ -126,7 +125,7 @@ class _MainScreenState extends State<MainScreen> {
       mainScreenTapClose: true,
       openCurve: const Interval(0.0, 1.0, curve: Curves.ease),
       closeCurve: const Interval(0.0, 1.0, curve: Curves.ease),
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 250),
     );
   }
 }

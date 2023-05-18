@@ -13,7 +13,12 @@ class MenuScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(
+        top: 16,
+        bottom: 16,
+        left: 16,
+        right: 8
+      ),
       color: Theme.of(context).primaryColorDark,
       child: const SafeArea(
         child: Column(

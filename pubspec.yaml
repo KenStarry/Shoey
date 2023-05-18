@@ -38,6 +38,7 @@ dependencies:
   hidden_drawer_menu: ^3.0.1
   flutter_zoom_drawer: ^3.0.4
   curved_navigation_bar: ^1.0.3
+  # lottie animations
   lottie: ^2.3.2
   fluttertoast: ^8.1.1
   provider: ^6.0.5
@@ -86,6 +87,7 @@ flutter:
     - assets/images/jordans_logo_pngwing.png
     - assets/images/nike_logo_pngwing.png
     - assets/images/puma_logo_pngwing.png
+    - assets/lottie/empty_screen.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
