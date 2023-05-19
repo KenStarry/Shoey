@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:shoey/screens/cart_screen/cart_screen.dart';
 import 'package:shoey/screens/core/components.dart';
@@ -21,7 +22,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  late List<Icon> _icons;
+  late List<GButton> _bottomBarTabs;
   late final List<Widget> _pages;
 
   var _selectedIndex = 0;
@@ -30,22 +31,34 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
 
-    _icons = const [
-      Icon(
-        Icons.home,
+    _bottomBarTabs = [
+      GButton(
         key: Key("home_screen_icon"),
+        icon: Icons.home,
+        haptic: false,
+        text: "Home",
+        onPressed: () {},
       ),
-      Icon(
-        Icons.shopping_cart,
+      GButton(
         key: Key("cart_screen_icon"),
+        icon: Icons.shopping_cart,
+        haptic: false,
+        text: "My Cart",
+        onPressed: () {},
       ),
-      Icon(
-        Icons.favorite_border,
+      GButton(
         key: Key("favorite_screen_icon"),
+        icon: Icons.favorite_border,
+        haptic: false,
+        text: "Favourites",
+        onPressed: () {},
       ),
-      Icon(
-        Icons.settings,
+      GButton(
         key: Key("settings_screen_icon"),
+        icon: Icons.settings,
+        haptic: false,
+        text: "Settings",
+        onPressed: () {},
       ),
     ];
 
@@ -97,25 +110,31 @@ class _MainScreenState extends State<MainScreen> {
               ],
             ),
             body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: IndexedStack(
                 index: _selectedIndex,
                 children: _pages,
               ),
             ),
-            bottomNavigationBar: CurvedNavigationBar(
-              key: const Key("main_curved_navigation"),
-              items: _icons,
-              buttonBackgroundColor: Theme.of(context).primaryColorDark,
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            bottomNavigationBar: Container(
               color: Theme.of(context).primaryColorDark,
-              animationDuration: const Duration(milliseconds: 300),
-              onTap: (index) {
-                //  navigate to page at index
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: GNav(
+                  tabs: _bottomBarTabs,
+                  onTabChange: (index) {
+                    setState(() {
+                      _selectedIndex = index;
+                    });
+                  },
+                  backgroundColor: Theme.of(context).primaryColorDark,
+                  color: Theme.of(context).iconTheme.color,
+                  activeColor: Theme.of(context).iconTheme.color,
+                  tabBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  padding: const EdgeInsets.all(16),
+                  gap: 8,
+                ),
+              ),
             ),
           )),
       menuScreen: MenuScreen(),

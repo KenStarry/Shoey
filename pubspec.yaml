@@ -38,6 +38,8 @@ dependencies:
   hidden_drawer_menu: ^3.0.1
   flutter_zoom_drawer: ^3.0.4
   curved_navigation_bar: ^1.0.3
+  # google nav bar
+  google_nav_bar: ^5.0.6
   # lottie animations
   lottie: ^2.3.2
   fluttertoast: ^8.1.1
@@ -68,6 +70,8 @@ flutter_native_splash:
     image: assets/images/shoey_light_mode.png
     image_dark: assets/images/shoey_dark_mode.png
     android: false
+  fullscreen: true
+  android_gravity: center
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
